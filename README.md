@@ -160,7 +160,7 @@ var max = new Person { Name = "Max", Age = 65 };
 bool inWorkingAgeRange = person.Between(min, max); // true
 ```
 
-## ?? Use Cases
+##  Use Cases
 
 ### Age Validation
 
@@ -232,7 +232,7 @@ var affordablePrices = products
     .ToList();
 ```
 
-## ?? API Reference
+##  API Reference
 
 ### BetweenBounds Enum
 
@@ -246,110 +246,17 @@ public enum BetweenBounds
 }
 ```
 
-### Between Method (with enum)
 
-```csharp
-public static bool Between<T>(this T value, T min, T max, BetweenBounds bounds = BetweenBounds.Inclusive) 
-    where T : IComparable<T>
-```
 
-#### Parameters
-
-- **value**: The value to evaluate
-- **min**: The lower bound of the range
-- **max**: The upper bound of the range
-- **bounds** (optional): 
-  - `BetweenBounds.Inclusive` (default): Includes both bounds (>=, <=)
-  - `BetweenBounds.Exclusive`: Excludes both bounds (>, <)
-  - `BetweenBounds.ExcludeLower`: Excludes only lower bound (>, <=)
-  - `BetweenBounds.ExcludeUpper`: Excludes only upper bound (>=, <)
-
-#### Returns
-
-`bool`: `true` if the value is within the specified range; otherwise, `false`.
-
-#### Exceptions
-
-- **ArgumentNullException**: Thrown if `value`, `min`, or `max` are `null` (for reference types).
-
-### Between Method (backwards compatibility)
-
-```csharp
-public static bool Between<T>(this T value, T min, T max, bool inclusive = true) 
-    where T : IComparable<T>
-```
-
-#### Parameters
-
-- **value**: The value to evaluate
-- **min**: The lower bound of the range
-- **max**: The upper bound of the range
-- **inclusive** (optional): 
-  - `true` (default): Includes both bounds (>=, <=)
-  - `false`: Excludes both bounds (>, <)
-
-## ?? Tests
-
-The library includes a comprehensive unit test suite with xUnit covering:
-
-- ? Numeric types (int, double, decimal)
-- ? Dates (DateTime)
-- ? Strings
-- ? Custom types with IComparable<T>
-- ? All boundary modes (Inclusive, Exclusive, ExcludeLower, ExcludeUpper)
-- ? Edge cases (boundary values)
-- ? Null value validation
-
-To run the tests:
-
-```bash
-cd Between.Tests
-dotnet test
-```
-
-## ?? Performance
-
-The `Between` method has excellent performance because:
-
-- No unnecessary boxing/unboxing
-- Uses the native `CompareTo` method of the type
-- Compiles inline in most cases
-- No additional memory allocations
-
-## ?? Contributing
-
-Contributions are welcome! Please:
-
-1. Fork the repository
-2. Create a branch for your feature (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-## ?? License
+## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## ?? Acknowledgments
 
-Inspired by SQL's `BETWEEN` operator, this library brings the same intuitive syntax to C# as **syntactic sugar**.
-
-Just like SQL:
-```sql
-SELECT * FROM Users WHERE age BETWEEN 18 AND 65
-```
-
-Now in C#:
-```csharp
-users.Where(u => u.Age.Between(18, 65))
-```
-
-The goal is to make C# code more expressive and readable through elegant syntactic sugar.
-
-## ?? Support
+##  Support
 
 If you find a bug or have a suggestion, please [open an issue](https://github.com/yourusername/Between/issues).
 
 ---
 
-**Like the project? Give it a ? on GitHub!**
+**Like the project? Give it a star on GitHub!**
