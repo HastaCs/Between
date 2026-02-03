@@ -7,7 +7,7 @@ A lightweight and generic library for C# that provides elegant extension methods
 
 **Syntactic sugar** for range comparisons that makes your code more readable and expressive, inspired by SQL's `BETWEEN` operator.
 
-## ?? Features
+## Features
 
 - **Syntactic Sugar**: Clean, readable syntax that replaces verbose comparison code
 - **Generic**: Works with any type that implements `IComparable<T>`
@@ -17,21 +17,8 @@ A lightweight and generic library for C# that provides elegant extension methods
 - **Type-safe**: Fully typed with compile-time validation
 - **Well documented**: Complete IntelliSense with XML documentation
 
-## ?? Installation
 
-Install the NuGet package using the .NET CLI:
-
-```bash
-dotnet add package Between
-```
-
-Or using the Package Manager Console:
-
-```powershell
-Install-Package Between
-```
-
-## ?? Usage
+## Usage
 
 ### Why Use This Library? (Syntactic Sugar Explained)
 
