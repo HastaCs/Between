@@ -137,17 +137,6 @@ value.Between(10, 20, BetweenBounds.ExcludeLower);  // true  (includes upper)
 value.Between(10, 20, BetweenBounds.ExcludeUpper);  // false (excludes upper)
 ```
 
-### Backwards Compatibility
-
-The library maintains backwards compatibility with the boolean parameter:
-
-```csharp
-int value = 10;
-value.Between(10, 20); // true (inclusive by default)
-value.Between(10, 20, inclusive: false); // false (exclusive)
-value.Between(10, 20, inclusive: true); // true (inclusive)
-```
-
 ### Custom Types
 
 Works with any type that implements `IComparable<T>`:
